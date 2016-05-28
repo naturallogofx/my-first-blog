@@ -5,9 +5,20 @@
     <title>Noms &amp;&amp; Cats</title>
   </head>
   <body>
-    <h1>Noms &amp;&amp; Cats</h1>
-    <p>
-      Time for cats!
-    </p>
+
+    <div>
+        <h1><a href="">Noms &amp;&amp; Cats</a></h1>
+        <p>Time for noms and cats!</p>
+    </div>
+
+    {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href-"">{{ post.title }}</a></h1>
+        <p>
+          {{ post.text|linebreaks }}
+        </p>
+    {% endfor %}
+
   </body>
 </html>
