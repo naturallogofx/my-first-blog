@@ -20,6 +20,11 @@ body {
     text-decoration: none;
 }
 
+.header-image {
+    max-width: 100px;
+    max-height: auto;
+}
+
 .content {
     margin-left: 40px;
 }
