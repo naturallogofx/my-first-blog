@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Noms &amp;&amp; Cats</title>
-  </head>
-  <body>
+{% extends 'blog/base.html' %}
 
-    <div>
-        <h1><a href="">Noms &amp;&amp; Cats</a></h1>
-        <p>Time for noms and cats!</p>
-    </div>
-
-    {% for post in posts %}
-      <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href-"">{{ post.title }}</a></h1>
+{% block content %}
+  {% for post in posts %}
+    <div class="post">
+      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <div class="date">
         <p>
-          {{ post.text|linebreaks }}
+          published: {{ post.published_date }}
         </p>
-    {% endfor %}
-
-  </body>
-</html>
+      </div>
+      <p>
+        {{ post.text|linebreaks }}
+      </p>
+    </div>
+  {% endfor %}
+{% endblock %}
